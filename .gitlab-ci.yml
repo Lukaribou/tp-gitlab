@@ -4,7 +4,7 @@ stages:
 test:
   stage: test
   tags:
-    - tp
+    - macos
   before_script:
     - pip install hatch
   script:
