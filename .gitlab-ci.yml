@@ -6,6 +6,7 @@ test:
   tags:
     - macos
   before_script:
-    - pip install hatch
+    - pip install --upgrade pip && pip install hatch
   script:
+    - hatch shell
     - hatch run test
