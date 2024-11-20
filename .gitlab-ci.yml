@@ -3,11 +3,10 @@ stages:
 
 test:
   stage: test
-  coverage: /TOTAL.*? (100(?:\.0+)?\%\|[1-9]?\d(?:\.\d+)?\%)$/
   tags:
     - macos
   before_script:
-    - pip install --upgrade pip && pip install hatch pytest-cov
+    - pip install --upgrade pip && pip install hatch
   script:
-    - hatch test
-    - pytest --cov=my_arithmetic_lperroud
+    - hatch test --cover
+  coverage: '/\s+(\d+%)$/'
