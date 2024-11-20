@@ -1,5 +1,7 @@
 # my-arithmetic-lperroud
 
+![coverage](https://gitlab.univ-lr.com/lperroud/my_arithmetic_lperroud/badges/main/coverage.svg?job=test)
+
 [![PyPI - Version](https://img.shields.io/pypi/v/my-arithmetic-lperroud.svg)](https://pypi.org/project/my-arithmetic-lperroud)
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/my-arithmetic-lperroud.svg)](https://pypi.org/project/my-arithmetic-lperroud)
 
