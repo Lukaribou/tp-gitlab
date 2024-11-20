@@ -1,0 +1,11 @@
+stages:
+  - test
+
+test:
+  stage: test
+  tags:
+    - tp
+  before_script:
+    - pip install hatch
+  script:
+    - hatch run test
