@@ -10,3 +10,4 @@ test:
     - pip install --upgrade pip && pip install hatch pytest-cov
   script:
     - hatch test
+    - pytest --cov=my_arithmetic_lperroud
