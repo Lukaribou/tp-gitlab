@@ -1,0 +1,30 @@
+name: Doc pages
+run-name: Doc pages
+on:
+  push:
+    branches:
+      - main
+jobs:
+  pages:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        # This is the version of the action for setting up Python, not the Python version.
+        uses: actions/setup-python@v5
+        with:
+          # Semantic version range syntax or exact version of a Python version
+          python-version: '3.10'
+      - run: pip install --upgrade pip && pip install sphinx
+      - run: sphinx-build -b html docs/ docs/_build/
+      - uses: actions/upload-artifact@v2
+        with:
+          name: docs
+          path: docs/_build/
+      - name: ReadTheDocs Build
+        uses: dfm/rtd-action@v1
+        with:
+          webhook_url: ${{ secrets.RTD_WEBHOOK_URL }}
+          webhook_token: ${{ secrets.RTD_WEBHOOK_TOKEN }}
+          commit_ref: ${{ github.ref }}
+      
