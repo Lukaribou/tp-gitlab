@@ -17,7 +17,7 @@ sys.path.insert(0, os.path.abspath('../src'))
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = ["sphinx.ext.autodoc", "sphinx.ext.napoleon", "rtds_action"]
+extensions = ["sphinx.ext.autodoc", "sphinx.ext.napoleon"]
 
 templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
@@ -29,7 +29,3 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 html_theme = 'alabaster'
 html_static_path = ['_static']
-
-rtds_action_github_repo = "lperroud/my-arithmetic-lperroud"
-rtds_action_path = "./_build"
-rtds_action_github_token = os.environ.get("GITHUB_TOKEN")
