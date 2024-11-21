@@ -1,3 +1,3 @@
 # my-arithmetic-lperroud
 
-![coverage](https://gitlab.univ-lr.fr/lperroud/my_arithmetic_lperroud/badges/main/coverage.svg?job=test)
+[![Coverage Status](https://coveralls.io/repos/github/Lukaribou/tp-gitlab/badge.svg?branch=main)](https://coveralls.io/github/Lukaribou/tp-gitlab?branch=main)
