@@ -2,7 +2,7 @@ name: Coverage
 run-name: Coverage
 on: [push]
 jobs:
-  pages:
+  coverage:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -12,9 +12,7 @@ jobs:
         with:
           # Semantic version range syntax or exact version of a Python version
           python-version: '3.10'
-      - run: pip install --upgrade pip && pip install pytest pytest-cov coveralls
-      - name: Run coverage
-        run: |
-          pytest --cov=my_arithmetic_lperroud tests/
-          coverage xml
+      - run: pip install --upgrade pip && pip install coveralls pytest
+      - run: pip install -e .
+      - run: coverage run --source=my_arithmetic_lperroud -m pytest tests/
       - run: coveralls
