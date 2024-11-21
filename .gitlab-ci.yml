@@ -1,6 +1,7 @@
 stages:
   - test
   - build
+  - deploy
 
 test:
   stage: test
@@ -43,3 +44,17 @@ build-dev:
   after_script:
     - echo "my-arithmetic-lperroud deployment on develop servers"
     - ls -l dist/
+
+pages:
+  stage: deploy
+  tags:
+    - macos
+  - before_script:
+    - pip install --upgrade pip && pip install sphinx
+  script:
+    - sphinx-build -b html . public/
+  artifacts:
+    paths:
+      - public
+  only:
+    - main
