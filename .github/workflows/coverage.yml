@@ -15,4 +15,7 @@ jobs:
       - run: pip install --upgrade pip && pip install coveralls pytest
       - run: pip install -e .
       - run: coverage run --source=my_arithmetic_lperroud -m pytest tests/
-      - run: coveralls
+      - name: Coveralls
+        env:
+          COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
+        run: coveralls
