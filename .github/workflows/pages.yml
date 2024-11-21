@@ -22,7 +22,7 @@ jobs:
           name: docs
           path: docs/_build/
       - name: ReadTheDocs Build
-        uses: dfm/rtd-action@v1
+        uses: dfm/rtds-action@v1
         with:
           webhook_url: ${{ secrets.RTD_WEBHOOK_URL }}
           webhook_token: ${{ secrets.RTD_WEBHOOK_TOKEN }}
