@@ -1,0 +1,14 @@
+name: Build Dev
+run-name: Build Dev
+on:
+  push:
+    branches:
+      - develop
+jobs:
+  build:
+    runs-on: python:3.10
+    steps:
+      - run: pip install --upgrade pip && pip install hatch
+      - run: hatch build -t wheel
+      - run: echo "my-arithmetic-lperroud deployment on develop servers"
+      - run: ls -l dist/
