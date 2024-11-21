@@ -52,9 +52,9 @@ pages:
   before_script:
     - pip install --upgrade pip && pip install sphinx
   script:
-    - sphinx-build -b html . public/
+    - sphinx-build -b html docs/ docs/_build/
   artifacts:
     paths:
-      - public
+      - docs/_build/
   only:
     - main

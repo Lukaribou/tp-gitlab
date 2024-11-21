@@ -10,6 +10,10 @@ project = 'my_arithmetic_lperroud'
 copyright = '2024, Lucas Perroud'
 author = 'Lucas Perroud'
 
+import os
+import sys
+sys.path.insert(0, os.path.abspath('../src'))
+
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
