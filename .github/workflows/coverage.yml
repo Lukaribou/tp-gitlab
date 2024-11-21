@@ -1,5 +1,5 @@
-name: Doc pages
-run-name: Doc pages
+name: Coverage
+run-name: Coverage
 on: [push]
 jobs:
   pages:
@@ -12,6 +12,6 @@ jobs:
         with:
           # Semantic version range syntax or exact version of a Python version
           python-version: '3.10'
-      - run: pip install --upgrade pip && pip install coveralls
+      - run: pip install --upgrade pip && pip install pytest coveralls
       - run: coverage run -m pytest
       - run: coveralls
