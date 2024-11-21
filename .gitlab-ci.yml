@@ -49,7 +49,7 @@ pages:
   stage: deploy
   tags:
     - macos
-  - before_script:
+  before_script:
     - pip install --upgrade pip && pip install sphinx
   script:
     - sphinx-build -b html . public/
