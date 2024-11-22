@@ -12,8 +12,8 @@ jobs:
         with:
           # Semantic version range syntax or exact version of a Python version
           python-version: '3.10'
-      - run: pip install --upgrade pip && pip install coveralls pytest
-      - run: coverage run --source=src/ -m pytest tests/
+      - run: pip install --upgrade pip && pip install coveralls hatch pytest pytest-cov
+      - run: hatch test --cover --cov-report term
       - name: Coveralls
         env:
           COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
